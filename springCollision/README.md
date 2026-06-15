@@ -44,4 +44,42 @@ To justify our sign in differential equations, assume $x_2-x_1>L \rightarrow u>0
 5. By substituing this into $x_1=\frac{k}{m_1}\frac{v_{20}-v_{10}}{\omega^3}\sin{\omega t} + x_{10}$ and $x_2=-\frac{k}{m_2}\frac{v_{20}-v_{10}}{\omega^3}\sin{\omega t} + x_{20}$ where both $x_{10}$ and $x_{20}$ are initial positions of masses in CM frame due to the integration constant.
 ### NUMERIC SOLUTION
 ***
-By using the code below in *springCollision.py*, we so
+By using the code below in *springCollision.py*, we solve the differential equations numerically in the CM frame:
+````python
+def springMotion_o(t,dr):
+    X1,V1,X2,V2=dr
+    u=(X2-X1)-1
+    
+    dX1dt=V1
+    dV1dt= k/m1 *u
+    
+    dX2dt=V2
+    dV2dt= -k/m2 *u
+    return [dX1dt,dV1dt,dX2dt,dV2dt]
+.
+.
+.
+x1_0=-(x_cm[-1] - X1_before[-1])
+v1_0=v10- v_common
+
+x2_0=-x_cm[-1] + X2_before[-1]
+v2_0=v20-v_common
+
+t_common=np.linspace(t_current,tf)
+dR0=[x1_0,v1_0,x2_0,v2_0]
+impact_cm=solve_ivp(springMotion_cm,(t_current,tf),dR0,dense_output=True)
+````
+One can examine the code file and understand the lab frame solutions as labeled *object._o* 
+<figure>
+    <img src="Figure 2026-06-15 182304 (0).png" alt="X diagram" width=500>
+    <figcaption> <em>Figure 1: The x-t graph of both masses in the CM frame </em> </figcaption>
+</figure>
+
+<figure>
+    <img src="Figure 2026-06-15 182304 (1).png" width=500>
+    <figcaption> <em>Figure 3: The v-t graph of both masses in the CM frame </em> </figcaption>
+</figure>
+<figure>
+    <img src="Figure 2026-06-15 230732 (0).png" width=500>
+    <figcaption> <em>Figure 3: The comparison of the numerical values and the theoratical value in CM frame for both masses </em> </figcaption>
+</figure>
