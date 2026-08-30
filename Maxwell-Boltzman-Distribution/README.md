@@ -77,6 +77,7 @@ From line 89 to 115 in *collisionMechanic.py* we operate this process. From the 
 In **distribution.py**, to get the theoretical probability curve, we define a *F(u)* function. The rest of the code is to animate the process with the `matplotlib.FuncAnimation` function.
 
 After the collisions completed, our system represented as following:
+
 <img src="FinalState.png" width="450" align="center"> 
 
 As one can realize, it takes time to reach the thermal equilibrium. For more detailed representing, look for *simulation.mp4* video in the folder.
