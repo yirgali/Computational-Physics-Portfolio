@@ -32,7 +32,7 @@ Initially, our system looks as follows:
 #### Particle Collisions
 - To determine the collisions of particles each other, we first create an *dr* array to determine the distance between each particle using the method
 
-$$
+```math
 \begin{bmatrix} 
 x_1 \\ 
 x_2 \\ 
@@ -48,7 +48,7 @@ x_{11} & x_{12} & \cdots & x_{1N} \\
 \vdots & \vdots & \ddots & \vdots \\ 
 x_{N1} & x_{N2} & \cdots & x_{NN} 
 \end{bmatrix}
-$$
+```
 
 - We do the same calculations for the velocities to determine 
 $\vec{v_{rel}} \cdot \vec{r_{rel}}$. *pCol* variable holds the conditions we need to check, which are 
@@ -58,15 +58,20 @@ $\vec{v_{rel}} \cdot \vec{r_{rel}}$. *pCol* variable holds the conditions we nee
 
 To work easily, we need to derive a formula for collision. During the collision, a momentum transferred as $\vec{P}=P_0\hat{k}$ where $\hat{k}$ is the base vector align with the center of the particles, meaning direction with the collisions and it is defined as 
 
-$$
+```math
 \hat{k}=\frac{\vec{r_i}-\vec{r_j}}{\left |{\vec{r_i}-\vec{r_j}}\right |}=\vec{r_{ij}}
-$$ 
+```
 for each two particle. Thus we can update their velocities after the collision as 
-$$\vec{v_i}'=\vec{v_i}+\frac{\vec{P}}{M}$$ $$\vec{v_j}'=\vec{v_j}-\frac{\vec{P}}{M}$$
+```math
+\vec{v_i}'=\vec{v_i}+\frac{\vec{P}}{M}
+```
+```math
+\vec{v_j}'=\vec{v_j}-\frac{\vec{P}}{M}
+```
 Based on the assumptions Maxwell consider above, collisions are elastic and the kinetic energy for each pair is conserved during the collision. If we solve the energy equations, we get the result 
-$$
+```math
 \vec{P}=-2\frac{m_i m_j}{m_i+m_j}[(\vec{v_i}-\vec{v_j}) \cdot \vec{r_{ij}}]\vec{r_{ij}}
-$$
+```
 From line 89 to 115 in *collisionMechanic.py* we operate this process. From the condition boolen array *pCol*, we detect the pairs and calculate the product. We use `numpy.hstack` to reshape the array so that each row corresponds one particle. At the end, we print the total collision among the particles to make sure that collision occured so that one can debug if it is not so. Finally, we return the final velocities *v* and kinetic energy array *ke*. 
 
 In **distribution.py**, to get the theoretical probability curve, we define a *F(u)* function. The rest of the code is to animate the process with the `matplotlib.FuncAnimation` function.
