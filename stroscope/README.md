@@ -1,3 +1,5 @@
+
+
 # STREBOSCOPE
 ### Problem and the Purpose
 Imagine a rotational motion or a tool you want to work with. How can you measure its identities, namely its frequency hence the rotational speed? By using optical and wave principles, one can measure a rotational speed, which is what a industrial mechanical streboscope does. A mechanical streboscope enables us to observe the rotational identities by a set up light source whereas a laser streboscope uses diode laser to observe the same effect. We will analyze the first one.
@@ -60,6 +62,9 @@ The results were observed manually and written manually instead of algorithmical
 | **2** | 69.79 $\pm 0.8$|
 | **3** | 34.60 $\pm 0.8$|
 | **4** | 34.46 $\pm 0.8$|
+
+https://github.com/user-attachments/assets/34c68d01-8a90-444c-8b4a-d5a8f7687be6
+
 
 **Result:**
 Using the consecutive stationary frequencies by taking average ($f_{\text{high}} \approx 69.72\text{ Hz}$ and $f_{\text{low}} \approx 34.53\text{ Hz}$), the fundamental rotational frequency of the motor is:
