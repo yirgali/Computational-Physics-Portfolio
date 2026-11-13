@@ -61,6 +61,9 @@ The results were observed manually and written manually instead of algorithmical
 | **3** | 34.60 $\pm 0.8$|
 | **4** | 34.46 $\pm 0.8$|
 
+
+https://github.com/user-attachments/assets/14fd8e5a-4e44-499b-af04-6f10e7e35acb
+
 **Result:**
 Using the consecutive stationary frequencies by taking average ($f_{\text{high}} \approx 69.72\text{ Hz}$ and $f_{\text{low}} \approx 34.53\text{ Hz}$), the fundamental rotational frequency of the motor is:
 
