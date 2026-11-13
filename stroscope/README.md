@@ -3,10 +3,10 @@
 Imagine a rotational motion or a tool you want to work with. How can you measure its identities, namely its frequency hence the rotational speed? By using optical and wave principles, one can measure a rotational speed, which is what a industrial mechanical stroboscope does. A mechanical stroboscope enables us to observe the rotational identities by a set up light source whereas a laser stroboscope uses diode laser to observe the same effect. We will analyze the first one.
 ## Theory
 Imagine a rotational disc, which taped with black band and has a white reflective white strip on it. We can assume the system as a rotating clock in a dark enclosed system with brightened just to see the strip. Hence, its rotational speed $w$ is 
-$$w=\frac{2\pi}{f}$$
+$$w=2\pi f$$
 where $f$ is its frequency. So, if the strip is rotating with a frequency $f$ and if we look directly to the strip with the same frequency, we would observe that the strip do not move at all, relatively. We are bound to say relatively because the disc is rotating as expected but our eyes cannot distinguish it, which is called *streboscopic effect*. 
 ### How to observe?
-As one can see from the analogy, we would not just observe this effect at the period $T$ but also at $2T$,$3T$.. $=nT$ where $n=1,2,3...$ etc. Therefore we cannot directly say that the frequency of the rotation is what we have observed. Instead, it has a relation as:
+As one can see from the analogy, we would not just observe this effect at the period $T$ but also at $2T$, $3T$ ... $=nT$ where $n=1,2,3...$ etc. Therefore we cannot directly say that the frequency of the rotation is what we have observed. Instead, it has a relation as:
 $$\frac{1}{f_{observed}}=T_{observed}=nT_{fundamental}$$
 $$f_{observed}=\frac{f_0}{n}$$
 where $f_0$ is the fundamental frequency. Since we cannot distinguish which harmonic mode we are observing, we need two consecutive stationary observation. 
@@ -27,7 +27,7 @@ To rotate the disc, we setup a dc motor controlled by Arduino. The disc is taped
 | Component | Arduino Pin | Notes |
 | :--- | :---: | :--- |
 | **Potentiometer (Wiper)** | `A5` | Controls LED strobe frequency |
-| **Strobe LED (+)** | `D13` orange wire on the left *(or your pin)* | Series current-limiting resistor |
+| **Strobe LED (+)** | `D13` orange wire on the left | Series current-limiting resistor |
 | **Motor Driver (Transistor Base)** | `D9` *(PWM)* | Drives DC motor with flyback diode |
 
 ### Methodology and Controlling the LED
